@@ -1,0 +1,17 @@
+body {
+    background-image: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/newspaper-wallpaper-australia-new-vintage-newspaper-wallpaper-bar-cafe-coration-wall-paper-retro-letters-project-wallpapers-pare-in-from-home-print-australia.jpg");
+    padding-top: 70px;
+}
+
+.deleteNote {
+	display: inline-block;
+}
+
+.previousNotes {
+    display: inline-block;
+    width: 90%
+}
+
+#scrape {
+    margin: 8px 0px;
+}
