@@ -6,8 +6,8 @@ var mongoose = require("mongoose");
 var path = require("path");
 
 // Requiring Note and Article models
-var Note = require("./models/Note.js");
-var Article = require("./models/Article.js");
+var Note = require("./models/note.js");
+var Article = require("./models/article.js");
 
 // Scraping tools
 var request = require("request");
@@ -36,12 +36,12 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
-    partialsDir: path.join(__dirname, "/views/models")
+    partialsDir: path.join(__dirname, "/views/layouts")
 }));
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9");
+mongoose.connect("mongodb://localhost/mongoHeadlines");
 //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
