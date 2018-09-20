@@ -12,6 +12,7 @@ var Article = require("./models/article.js");
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
+var MONGODB_URI = process.env.MONGODB_URI
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -41,7 +42,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/mongoHeadlines");
+mongoose.connect(MONGODB_URI);
 //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
