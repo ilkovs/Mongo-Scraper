@@ -12,7 +12,9 @@ var Article = require("./models/article.js");
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
-var MONGODB_URI = process.env.MONGODB_URI
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Mongo-Scraper";
+
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
