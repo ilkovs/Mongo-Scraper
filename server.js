@@ -39,13 +39,13 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
-    partialsDir: path.join(__dirname, "/views/layouts")
+    partialsDir: path.join(__dirname, "./views/layouts")
 }));
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect(MONGODB_URI);
-//mongoose.connect("mongodb://localhost/mongoscraper");
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
 var db = mongoose.connection;
 
 // Show any mongoose errors
