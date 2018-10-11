@@ -92,16 +92,20 @@ app.get("/scrape", function(req, res) {
 
       // Save an empty result object
       var result = {};
-
+      // console.log("this is the element", i, element)
+      // console.log("this is the title", element.children("h2").text())
       // Add the title and summary of every link, and save them as properties of the result object
-      result.title = $(this).children("h2").text();
-      result.summary = $(this).children(".summary").text();
-      result.link = $(this).children("h2").children("a").attr("href");
+      result.title = $(this).find("h2").text();
+      //console.log("this is the result title", result.title)
+      result.summary = $(this).find("p").text();
+      //console.log("this is the result summary", result.summary)
+      result.url = $(this).find("a").attr("href");
+      //console.log("this is the result url", result.url)
 
       // Using our Article model, create a new entry
       // This effectively passes the result object to the entry (and the title and link)
       var entry = new Article(result);
-
+      
       // Now, save that entry to the db
       entry.save(function(err, doc) {
         // Log any errors
